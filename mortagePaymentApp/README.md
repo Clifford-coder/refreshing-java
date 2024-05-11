@@ -1,4 +1,4 @@
-## 1. Mortgage Calculator App
+## Mortgage Calculator App
 
 I have created a simple project to calculate a mortgage. This project allows you to input the principal amount, annual interest rate, and period in years to calculate the mortgage payment.
 
