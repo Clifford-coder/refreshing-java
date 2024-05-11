@@ -10,4 +10,4 @@ Best regards,
 Clifford
 
 ## Projects
-1. Mortage Calculator App
+1. Mortgage Calculator App
