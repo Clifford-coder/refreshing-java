@@ -8,3 +8,6 @@ Thank you for joining me on this journey of learning and growth.
 
 Best regards,  
 Clifford
+
+## Projects
+1. Mortage Calculator App
