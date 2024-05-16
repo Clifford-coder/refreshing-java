@@ -34,11 +34,11 @@ public class App {
 
     private static void printMortgage(int principal, double monthlyInterestRate,
             double compoundedRateFactor) throws Exception {
-        double mortgate = calculateMortgate(principal, monthlyInterestRate, compoundedRateFactor);
-        String mortageFormatedInDollars = NumberFormat.getCurrencyInstance().format(mortgate);
+        double mortgage = calculateMortgage(principal, monthlyInterestRate, compoundedRateFactor);
+        String mortgageFormattedInDollars = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("MORTGAGE");
         System.out.println("-------------");
-        System.out.println("Monthly Payments: " + mortageFormatedInDollars);
+        System.out.println("Monthly Payments: " + mortgageFormattedInDollars);
     }
 
     private static void printPaymentSchedule(int principal, short numberOfPayments, double monthlyInterestRate,
@@ -49,24 +49,22 @@ public class App {
         for (short month = 1; month <= numberOfPayments; month++) {
             double remainingBalance = calculateRemainingBalance(principal, monthlyInterestRate, compoundedRateFactor,
                     month);
-            String mortageRemainingBalInDollars = NumberFormat.getCurrencyInstance().format(remainingBalance);
+            String mortgageRemainingBalInDollars = NumberFormat.getCurrencyInstance().format(remainingBalance);
             System.out.print("Month " + month + "=> ");
-            System.out.println(mortageRemainingBalInDollars);
+            System.out.println(mortgageRemainingBalInDollars);
         }
     }
 
-    private static double calculateMortgate(int principal, double monthlyInterestRate, double compoundedRateFactor)
+    private static double calculateMortgage(int principal, double monthlyInterestRate, double compoundedRateFactor)
             throws Exception {
-        double mortgate = (principal * monthlyInterestRate * compoundedRateFactor) / (compoundedRateFactor - 1);
-        return mortgate;
+        return (principal * monthlyInterestRate * compoundedRateFactor) / (compoundedRateFactor - 1);
     }
 
     private static double calculateRemainingBalance(int principal, double monthlyInterestRate,
-            double compoundedRateFactor, short numberOfPaymentsMade) {
-        double remainingBalance = (principal * (compoundedRateFactor
+            double compoundedRateFactor, short numberOfPaymentsMade)  {
+        return (principal * (compoundedRateFactor
                 - Math.pow(1 + monthlyInterestRate, numberOfPaymentsMade)))
                 / (compoundedRateFactor - 1);
-        return remainingBalance;
     }
 
 }
